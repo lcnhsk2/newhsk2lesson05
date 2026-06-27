@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>HSK 2 Bab 5 - Flashcard & Kuis Interaktif (100 Kosakata)</title>
+    <title>HSK 2 Bab 5 - 52 Kosakata | Flashcard & Kuis Interaktif</title>
     <style>
         * {
             margin: 0;
@@ -250,8 +250,8 @@
 <body>
 <div class="app-container">
     <div class="title-section">
-        <h1>📚 HSK 2 Bab 5 – 第一次去中国朋友家</h1>
-        <div class="watermark">lcn palembang-08994477998</div>
+        <h1>📚 HSK 2 Bab 5 – 52 Kosakata Inti</h1>
+        <div class="watermark">Berdasarkan KOSAKATA BAB 05.txt | Flashcard + Kuis Interaktif</div>
     </div>
 
     <div class="tabs">
@@ -278,7 +278,7 @@
             </div>
             <div class="review-badge">
                 <span class="mark-info" id="markedCountBadge">📌 Tertandai: 0</span>
-                <span class="counter" id="flashCounter">Kartu 1 / 100</span>
+                <span class="counter" id="flashCounter">Kartu 1 / 52</span>
             </div>
         </div>
     </div>
@@ -286,7 +286,7 @@
     <!-- KUIS TAB -->
     <div id="quizTab" class="tab-content">
         <div class="quiz-area">
-            <div class="score-area">🏆 SKOR: <span id="quizScore">0</span> / <span id="totalQuizCount">100</span></div>
+            <div class="score-area">🏆 SKOR: <span id="quizScore">0</span> / <span id="totalQuizCount">52</span></div>
             <div class="timer-bar">
                 <span class="timer-label">⏱ WAKTU</span>
                 <div class="progress-container">
@@ -310,108 +310,59 @@
 </div>
 
 <script>
-    // ======================= DATA KOSAKATA (100 item dari file) =======================
+    // ======================= DATA KOSAKATA (52 item dari KOSAKATA BAB 05.txt) =======================
     const vocabulary = [
-        { hanzi: "下去", pinyin: "xiàqù", arti: "turun ke bawah" },
-        { hanzi: "上来", pinyin: "shànglái", arti: "naik ke atas" },
-        { hanzi: "进去", pinyin: "jìnqù", arti: "masuk ke dalam" },
-        { hanzi: "出来", pinyin: "chūlái", arti: "keluar" },
-        { hanzi: "过来", pinyin: "guòlái", arti: "datang ke sini" },
-        { hanzi: "起来", pinyin: "qǐlái", arti: "bangun; berdiri" },
-        { hanzi: "进来", pinyin: "jìnlái", arti: "masuk ke sini" },
-        { hanzi: "下去 (等)", pinyin: "xiàqù", arti: "turun ke bawah (arah menjauh)" },
-        { hanzi: "回去", pinyin: "huíqù", arti: "kembali ke sana" },
-        { hanzi: "拿出来", pinyin: "ná chūlái", arti: "mengeluarkan (dari dalam)" },
-        { hanzi: "送过来", pinyin: "sòng guòlái", arti: "mengirim ke sini" },
-        { hanzi: "拿来", pinyin: "ná lái", arti: "membawa ke sini" },
-        { hanzi: "送去", pinyin: "sòng qù", arti: "mengirim ke sana" },
-        { hanzi: "买回来", pinyin: "mǎi huílái", arti: "membeli lalu kembali" },
-        { hanzi: "走回去", pinyin: "zǒu huíqù", arti: "berjalan kembali ke sana" },
-        { hanzi: "快", pinyin: "kuài", arti: "cepat" },
-        { hanzi: "慢", pinyin: "màn", arti: "lambat" },
-        { hanzi: "晚", pinyin: "wǎn", arti: "terlambat" },
-        { hanzi: "时间", pinyin: "shíjiān", arti: "waktu" },
-        { hanzi: "第一次", pinyin: "dì-yī cì", arti: "pertama kali" },
-        { hanzi: "中国朋友", pinyin: "Zhōngguó péngyou", arti: "teman Tiongkok" },
-        { hanzi: "男朋友", pinyin: "nánpéngyou", arti: "pacar laki-laki" },
-        { hanzi: "女朋友", pinyin: "nǚpéngyou", arti: "pacar perempuan" },
-        { hanzi: "家", pinyin: "jiā", arti: "rumah" },
-        { hanzi: "楼下", pinyin: "lóuxià", arti: "bawah gedung" },
-        { hanzi: "楼上", pinyin: "lóushàng", arti: "atas gedung" },
-        { hanzi: "下面", pinyin: "xiàmiàn", arti: "di bawah" },
-        { hanzi: "上面", pinyin: "shàngmiàn", arti: "di atas" },
-        { hanzi: "外面", pinyin: "wàimiàn", arti: "di luar" },
-        { hanzi: "里面", pinyin: "lǐmiàn", arti: "di dalam" },
-        { hanzi: "前边", pinyin: "qiánbian", arti: "di depan" },
-        { hanzi: "后边", pinyin: "hòubian", arti: "di belakang" },
-        { hanzi: "等", pinyin: "děng", arti: "menunggu" },
-        { hanzi: "已经", pinyin: "yǐjīng", arti: "sudah" },
-        { hanzi: "还没", pinyin: "hái méi", arti: "masih belum" },
-        { hanzi: "都……了", pinyin: "dōu...le", arti: "sudah (penekanan)" },
-        { hanzi: "介绍", pinyin: "jièshào", arti: "memperkenalkan" },
-        { hanzi: "爷爷", pinyin: "yéye", arti: "kakek" },
-        { hanzi: "奶奶", pinyin: "nǎinai", arti: "nenek" },
-        { hanzi: "孩子", pinyin: "háizi", arti: "anak" },
-        { hanzi: "礼物", pinyin: "lǐwù", arti: "hadiah" },
-        { hanzi: "准备", pinyin: "zhǔnbèi", arti: "menyiapkan" },
-        { hanzi: "客气", pinyin: "kèqi", arti: "sungkan; sopan" },
-        { hanzi: "奶茶", pinyin: "nǎichá", arti: "teh susu" },
-        { hanzi: "跟", pinyin: "gēn", arti: "dengan; bersama" },
-        { hanzi: "走", pinyin: "zǒu", arti: "berjalan" },
-        { hanzi: "酒店", pinyin: "jiǔdiàn", arti: "hotel" },
-        { hanzi: "商场", pinyin: "shāngchǎng", arti: "pusat perbelanjaan" },
-        { hanzi: "超市", pinyin: "chāoshì", arti: "supermarket" },
-        { hanzi: "书店", pinyin: "shūdiàn", arti: "toko buku" },
-        { hanzi: "水果店", pinyin: "shuǐguǒ diàn", arti: "toko buah" },
-        { hanzi: "奶茶店", pinyin: "nǎichá diàn", arti: "kedai teh susu" },
-        { hanzi: "火车站", pinyin: "huǒchē zhàn", arti: "stasiun kereta" },
-        { hanzi: "公交站", pinyin: "gōngjiāo zhàn", arti: "halte bus" },
-        { hanzi: "请进", pinyin: "qǐng jìn", arti: "silakan masuk" },
-        { hanzi: "等车", pinyin: "děng chē", arti: "menunggu bus" },
-        { hanzi: "起床", pinyin: "qǐ chuáng", arti: "bangun tidur" },
-        { hanzi: "做菜", pinyin: "zuò cài", arti: "memasak" },
-        { hanzi: "洗水果", pinyin: "xǐ shuǐguǒ", arti: "mencuci buah" },
-        { hanzi: "拿书", pinyin: "ná shū", arti: "mengambil buku" },
-        { hanzi: "送礼物", pinyin: "sòng lǐwù", arti: "memberi hadiah" },
-        { hanzi: "准备饭", pinyin: "zhǔnbèi fàn", arti: "menyiapkan makanan" },
-        { hanzi: "好吃", pinyin: "hǎochī", arti: "enak (makanan)" },
-        { hanzi: "好喝", pinyin: "hǎohē", arti: "enak (minuman)" },
-        { hanzi: "好看", pinyin: "hǎokàn", arti: "bagus (penampilan)" },
-        { hanzi: "漂亮", pinyin: "piàoliang", arti: "cantik" },
-        { hanzi: "累", pinyin: "lèi", arti: "lelah" },
-        { hanzi: "生病", pinyin: "shēngbìng", arti: "sakit" },
-        { hanzi: "休息", pinyin: "xiūxi", arti: "istirahat" },
-        { hanzi: "上班", pinyin: "shàngbān", arti: "pergi kerja" },
-        { hanzi: "下班", pinyin: "xiàbān", arti: "pulang kerja" },
-        { hanzi: "开车", pinyin: "kāichē", arti: "mengemudi" },
-        { hanzi: "坐车", pinyin: "zuò chē", arti: "naik kendaraan" },
-        { hanzi: "打车", pinyin: "dǎchē", arti: "naik taksi" },
-        { hanzi: "坐公交车", pinyin: "zuò gōngjiāochē", arti: "naik bus" },
-        { hanzi: "回来", pinyin: "huílai", arti: "kembali ke sini" },
-        { hanzi: "回去", pinyin: "huíqù", arti: "kembali ke sana" },
-        { hanzi: "过来", pinyin: "guòlái", arti: "datang ke sini" },
-        { hanzi: "过去", pinyin: "guòqù", arti: "pergi ke sana" },
-        { hanzi: "进来", pinyin: "jìnlái", arti: "masuk ke sini" },
-        { hanzi: "进去", pinyin: "jìnqù", arti: "masuk ke sana" },
-        { hanzi: "出来", pinyin: "chūlái", arti: "keluar ke sini" },
-        { hanzi: "出去", pinyin: "chūqù", arti: "keluar ke sana" },
         { hanzi: "上来", pinyin: "shànglái", arti: "naik ke sini" },
         { hanzi: "上去", pinyin: "shàngqù", arti: "naik ke sana" },
         { hanzi: "下来", pinyin: "xiàlái", arti: "turun ke sini" },
         { hanzi: "下去", pinyin: "xiàqù", arti: "turun ke sana" },
-        { hanzi: "起来", pinyin: "qǐlái", arti: "bangun; berdiri" },
-        { hanzi: "走回", pinyin: "zǒu huí", arti: "berjalan kembali" },
-        { hanzi: "拿出", pinyin: "ná chū", arti: "mengeluarkan" },
-        { hanzi: "送给", pinyin: "sòng gěi", arti: "memberikan kepada" },
-        { hanzi: "买给", pinyin: "mǎi gěi", arti: "membelikan untuk" },
-        { hanzi: "为什么", pinyin: "wèishénme", arti: "mengapa" },
-        { hanzi: "因为……所以", pinyin: "yīnwèi...suǒyǐ", arti: "karena...sehingga" },
-        { hanzi: "都……了", pinyin: "dōu...le", arti: "sudah (penekanan)" },
-        { hanzi: "别", pinyin: "bié", arti: "jangan" },
-        { hanzi: "快点儿", pinyin: "kuài diǎnr", arti: "cepat sedikit" },
-        { hanzi: "慢点儿", pinyin: "màn diǎnr", arti: "pelan sedikit" },
+        { hanzi: "进来", pinyin: "jìnlái", arti: "masuk ke sini" },
+        { hanzi: "进去", pinyin: "jìnqù", arti: "masuk ke sana" },
+        { hanzi: "出来", pinyin: "chūlái", arti: "keluar ke sini" },
+        { hanzi: "出去", pinyin: "chūqù", arti: "keluar ke sana" },
+        { hanzi: "回来", pinyin: "huílái", arti: "kembali ke sini" },
+        { hanzi: "回去", pinyin: "huíqù", arti: "kembali ke sana" },
+        { hanzi: "起来", pinyin: "qǐlái", arti: "bangun (tidur) / berdiri" },
+        { hanzi: "爷爷", pinyin: "yéye", arti: "kakek" },
+        { hanzi: "奶奶", pinyin: "nǎinai", arti: "nenek" },
+        { hanzi: "爸爸", pinyin: "bàba", arti: "ayah" },
+        { hanzi: "妈妈", pinyin: "māma", arti: "ibu" },
+        { hanzi: "孩子", pinyin: "háizi", arti: "anak" },
+        { hanzi: "家人", pinyin: "jiārén", arti: "anggota keluarga" },
+        { hanzi: "客人", pinyin: "kèrén", arti: "tamu" },
+        { hanzi: "朋友", pinyin: "péngyou", arti: "teman" },
+        { hanzi: "男朋友", pinyin: "nánpéngyou", arti: "pacar (laki-laki)" },
+        { hanzi: "礼物", pinyin: "lǐwù", arti: "hadiah" },
+        { hanzi: "奶茶", pinyin: "nǎichá", arti: "teh susu / bubble tea" },
+        { hanzi: "酒店", pinyin: "jiǔdiàn", arti: "hotel" },
+        { hanzi: "商店", pinyin: "shāngdiàn", arti: "toko" },
+        { hanzi: "公交车", pinyin: "gōngjiāochē", arti: "bus" },
+        { hanzi: "车站", pinyin: "chēzhàn", arti: "halte / stasiun" },
+        { hanzi: "菜", pinyin: "cài", arti: "sayur / masakan" },
+        { hanzi: "水果", pinyin: "shuǐguǒ", arti: "buah" },
+        { hanzi: "手机", pinyin: "shǒujī", arti: "ponsel" },
+        { hanzi: "准备", pinyin: "zhǔnbèi", arti: "mempersiapkan" },
+        { hanzi: "介绍", pinyin: "jièshào", arti: "memperkenalkan" },
+        { hanzi: "接", pinyin: "jiē", arti: "menjemput / menerima (telp)" },
+        { hanzi: "送", pinyin: "sòng", arti: "mengantar / memberi" },
+        { hanzi: "拿", pinyin: "ná", arti: "mengambil / membawa" },
+        { hanzi: "买", pinyin: "mǎi", arti: "membeli" },
+        { hanzi: "等", pinyin: "děng", arti: "menunggu" },
+        { hanzi: "走", pinyin: "zǒu", arti: "berjalan / pergi" },
+        { hanzi: "起床", pinyin: "qǐchuáng", arti: "bangun tidur" },
+        { hanzi: "吃饭", pinyin: "chīfàn", arti: "makan" },
+        { hanzi: "做菜", pinyin: "zuòcài", arti: "memasak" },
+        { hanzi: "回家", pinyin: "huíjiā", arti: "pulang ke rumah" },
+        { hanzi: "第一次", pinyin: "dì-yī cì", arti: "pertama kali" },
         { hanzi: "一会儿", pinyin: "yīhuìr", arti: "sebentar lagi" },
-        { hanzi: "没事", pinyin: "méi shì", arti: "tidak apa-apa" }
+        { hanzi: "快点儿", pinyin: "kuài diǎnr", arti: "cepatlah" },
+        { hanzi: "前", pinyin: "qián", arti: "sebelum (waktu)" },
+        { hanzi: "已经", pinyin: "yǐjīng", arti: "sudah" },
+        { hanzi: "还没", pinyin: "hái méi", arti: "masih belum" },
+        { hanzi: "没事", pinyin: "méishì", arti: "tidak apa-apa" },
+        { hanzi: "客气", pinyin: "kèqi", arti: "sungkan / sopan" },
+        { hanzi: "跟", pinyin: "gēn", arti: "dengan / ikut" },
+        { hanzi: "都...了", pinyin: "dōu...le", arti: "sudah (penekanan)" }
     ];
     const TOTAL_VOCAB = vocabulary.length;
 

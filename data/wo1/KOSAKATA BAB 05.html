@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>HSK 2 Bab 5 - 52 Kosakata | Flashcard & Kuis Interaktif</title>
+    <title>HSK 2 Bab 06 – 小雪，生日快乐！ | Flashcard & Kuis</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #8b5cf6 100%);
+            background: linear-gradient(135deg, #831843 0%, #9d174d 50%, #db2777 100%);
             font-family: 'Arial', 'Segoe UI', sans-serif;
             min-height: 100vh;
             padding: 20px;
@@ -92,7 +92,6 @@
             to { opacity: 1; transform: translateY(0);}
         }
 
-        /* FLASHCARD */
         .flashcard-area {
             display: flex;
             flex-direction: column;
@@ -193,7 +192,6 @@
             display: inline-block;
         }
 
-        /* KUIS */
         .quiz-area { text-align: center; }
         .timer-bar {
             background: #fef9e3;
@@ -250,8 +248,8 @@
 <body>
 <div class="app-container">
     <div class="title-section">
-        <h1>📚 HSK 2 Bab 5 – 52 Kosakata Inti</h1>
-        <div class="watermark">Berdasarkan KOSAKATA BAB 05.txt | Flashcard + Kuis Interaktif</div>
+        <h1>📚 HSK 2 Bab 06 – 小雪，生日快乐！</h1>
+        <div class="watermark">Berdasarkan TB & WB Lesson 06 | Flashcard + Kuis</div>
     </div>
 
     <div class="tabs">
@@ -259,7 +257,7 @@
         <button class="tab-btn" data-tab="quiz">🎯 KUIS HANZI 🎯</button>
     </div>
 
-    <!-- FLASHCARD TAB -->
+    <!-- FLASHCARD -->
     <div id="flashcardTab" class="tab-content active">
         <div class="flashcard-area">
             <div class="card" id="flashcardCard">
@@ -278,15 +276,15 @@
             </div>
             <div class="review-badge">
                 <span class="mark-info" id="markedCountBadge">📌 Tertandai: 0</span>
-                <span class="counter" id="flashCounter">Kartu 1 / 52</span>
+                <span class="counter" id="flashCounter">Kartu 1 / 60</span>
             </div>
         </div>
     </div>
 
-    <!-- KUIS TAB -->
+    <!-- KUIS -->
     <div id="quizTab" class="tab-content">
         <div class="quiz-area">
-            <div class="score-area">🏆 SKOR: <span id="quizScore">0</span> / <span id="totalQuizCount">52</span></div>
+            <div class="score-area">🏆 SKOR: <span id="quizScore">0</span> / <span id="totalQuizCount">60</span></div>
             <div class="timer-bar">
                 <span class="timer-label">⏱ WAKTU</span>
                 <div class="progress-container">
@@ -310,63 +308,122 @@
 </div>
 
 <script>
-    // ======================= DATA KOSAKATA (52 item dari KOSAKATA BAB 05.txt) =======================
+    // ======================= KOSAKATA BAB 06 =======================
+    // Diambil dari file KOSAKATA BAB 06.txt
     const vocabulary = [
-        { hanzi: "上来", pinyin: "shànglái", arti: "naik ke sini" },
-        { hanzi: "上去", pinyin: "shàngqù", arti: "naik ke sana" },
-        { hanzi: "下来", pinyin: "xiàlái", arti: "turun ke sini" },
-        { hanzi: "下去", pinyin: "xiàqù", arti: "turun ke sana" },
-        { hanzi: "进来", pinyin: "jìnlái", arti: "masuk ke sini" },
-        { hanzi: "进去", pinyin: "jìnqù", arti: "masuk ke sana" },
-        { hanzi: "出来", pinyin: "chūlái", arti: "keluar ke sini" },
-        { hanzi: "出去", pinyin: "chūqù", arti: "keluar ke sana" },
-        { hanzi: "回来", pinyin: "huílái", arti: "kembali ke sini" },
-        { hanzi: "回去", pinyin: "huíqù", arti: "kembali ke sana" },
-        { hanzi: "起来", pinyin: "qǐlái", arti: "bangun (tidur) / berdiri" },
-        { hanzi: "爷爷", pinyin: "yéye", arti: "kakek" },
-        { hanzi: "奶奶", pinyin: "nǎinai", arti: "nenek" },
+        // ====== KATA BENDA ======
+        { hanzi: "生日", pinyin: "shēngrì", arti: "ulang tahun" },
+        { hanzi: "女儿", pinyin: "nǚ'ér", arti: "anak perempuan" },
+        { hanzi: "礼物", pinyin: "lǐwù", arti: "hadiah" },
+        { hanzi: "画笔", pinyin: "huàbǐ", arti: "kuas / pensil warna / alat gambar" },
+        { hanzi: "蛋糕", pinyin: "dàngāo", arti: "kue ulang tahun" },
+        { hanzi: "狗", pinyin: "gǒu", arti: "anjing" },
+        { hanzi: "猫", pinyin: "māo", arti: "kucing" },
+        { hanzi: "面条儿", pinyin: "miàntiáor", arti: "mie (panjang)" },
+        { hanzi: "床", pinyin: "chuáng", arti: "tempat tidur" },
+        { hanzi: "颜色", pinyin: "yánsè", arti: "warna" },
+        { hanzi: "肉", pinyin: "ròu", arti: "daging" },
+        { hanzi: "鱼", pinyin: "yú", arti: "ikan" },
+        { hanzi: "鸡", pinyin: "jī", arti: "ayam" },
+        { hanzi: "饭店", pinyin: "fàndiàn", arti: "restoran" },
+        { hanzi: "酒店", pinyin: "jiǔdiàn", arti: "hotel" },
+        { hanzi: "衣服", pinyin: "yīfu", arti: "pakaian" },
+        { hanzi: "电脑", pinyin: "diànnǎo", arti: "komputer" },
+        { hanzi: "面包", pinyin: "miànbāo", arti: "roti" },
+        { hanzi: "苹果", pinyin: "píngguǒ", arti: "apel" },
+        { hanzi: "家", pinyin: "jiā", arti: "rumah / keluarga" },
+        { hanzi: "弟弟", pinyin: "dìdi", arti: "adik laki-laki" },
         { hanzi: "爸爸", pinyin: "bàba", arti: "ayah" },
         { hanzi: "妈妈", pinyin: "māma", arti: "ibu" },
-        { hanzi: "孩子", pinyin: "háizi", arti: "anak" },
-        { hanzi: "家人", pinyin: "jiārén", arti: "anggota keluarga" },
-        { hanzi: "客人", pinyin: "kèrén", arti: "tamu" },
+        { hanzi: "爷爷", pinyin: "yéye", arti: "kakek" },
+        { hanzi: "奶奶", pinyin: "nǎinai", arti: "nenek" },
+        { hanzi: "老师", pinyin: "lǎoshī", arti: "guru" },
+        { hanzi: "同学", pinyin: "tóngxué", arti: "teman sekelas" },
         { hanzi: "朋友", pinyin: "péngyou", arti: "teman" },
-        { hanzi: "男朋友", pinyin: "nánpéngyou", arti: "pacar (laki-laki)" },
-        { hanzi: "礼物", pinyin: "lǐwù", arti: "hadiah" },
-        { hanzi: "奶茶", pinyin: "nǎichá", arti: "teh susu / bubble tea" },
-        { hanzi: "酒店", pinyin: "jiǔdiàn", arti: "hotel" },
-        { hanzi: "商店", pinyin: "shāngdiàn", arti: "toko" },
-        { hanzi: "公交车", pinyin: "gōngjiāochē", arti: "bus" },
-        { hanzi: "车站", pinyin: "chēzhàn", arti: "halte / stasiun" },
-        { hanzi: "菜", pinyin: "cài", arti: "sayur / masakan" },
-        { hanzi: "水果", pinyin: "shuǐguǒ", arti: "buah" },
-        { hanzi: "手机", pinyin: "shǒujī", arti: "ponsel" },
+
+        // ====== KATA KERJA ======
+        { hanzi: "画画", pinyin: "huà huà", arti: "menggambar / melukis" },
+        { hanzi: "画", pinyin: "huà", arti: "menggambar / lukisan" },
+        { hanzi: "打开", pinyin: "dǎkāi", arti: "membuka (kemasan, pintu, dll.)" },
+        { hanzi: "忘", pinyin: "wàng", arti: "lupa" },
+        { hanzi: "过生日", pinyin: "guò shēngrì", arti: "merayakan ulang tahun" },
         { hanzi: "准备", pinyin: "zhǔnbèi", arti: "mempersiapkan" },
-        { hanzi: "介绍", pinyin: "jièshào", arti: "memperkenalkan" },
-        { hanzi: "接", pinyin: "jiē", arti: "menjemput / menerima (telp)" },
-        { hanzi: "送", pinyin: "sòng", arti: "mengantar / memberi" },
-        { hanzi: "拿", pinyin: "ná", arti: "mengambil / membawa" },
-        { hanzi: "买", pinyin: "mǎi", arti: "membeli" },
-        { hanzi: "等", pinyin: "děng", arti: "menunggu" },
-        { hanzi: "走", pinyin: "zǒu", arti: "berjalan / pergi" },
+        { hanzi: "叫", pinyin: "jiào", arti: "memanggil / menyebut" },
         { hanzi: "起床", pinyin: "qǐchuáng", arti: "bangun tidur" },
-        { hanzi: "吃饭", pinyin: "chīfàn", arti: "makan" },
-        { hanzi: "做菜", pinyin: "zuòcài", arti: "memasak" },
-        { hanzi: "回家", pinyin: "huíjiā", arti: "pulang ke rumah" },
-        { hanzi: "第一次", pinyin: "dì-yī cì", arti: "pertama kali" },
-        { hanzi: "一会儿", pinyin: "yīhuìr", arti: "sebentar lagi" },
-        { hanzi: "快点儿", pinyin: "kuài diǎnr", arti: "cepatlah" },
-        { hanzi: "前", pinyin: "qián", arti: "sebelum (waktu)" },
+        { hanzi: "睡觉", pinyin: "shuìjiào", arti: "tidur" },
+        { hanzi: "休息", pinyin: "xiūxi", arti: "istirahat" },
+        { hanzi: "上班", pinyin: "shàngbān", arti: "pergi bekerja / masuk kerja" },
+        { hanzi: "下班", pinyin: "xiàbān", arti: "pulang kerja" },
+        { hanzi: "吃", pinyin: "chī", arti: "makan" },
+        { hanzi: "喝", pinyin: "hē", arti: "minum" },
+        { hanzi: "做", pinyin: "zuò", arti: "membuat / melakukan" },
+        { hanzi: "买", pinyin: "mǎi", arti: "membeli" },
+        { hanzi: "卖", pinyin: "mài", arti: "menjual" },
+        { hanzi: "送", pinyin: "sòng", arti: "memberikan (hadiah) / mengantar" },
+        { hanzi: "玩", pinyin: "wán", arti: "bermain" },
+        { hanzi: "看电影", pinyin: "kàn diànyǐng", arti: "menonton film" },
+
+        // ====== KATA SIFAT ======
+        { hanzi: "大", pinyin: "dà", arti: "besar" },
+        { hanzi: "小", pinyin: "xiǎo", arti: "kecil" },
+        { hanzi: "长", pinyin: "cháng", arti: "panjang" },
+        { hanzi: "快乐", pinyin: "kuàilè", arti: "bahagia" },
+        { hanzi: "舒服", pinyin: "shūfu", arti: "nyaman" },
+        { hanzi: "高兴", pinyin: "gāoxìng", arti: "senang" },
+        { hanzi: "漂亮", pinyin: "piàoliang", arti: "cantik" },
+        { hanzi: "好吃", pinyin: "hǎochī", arti: "enak (makanan)" },
+        { hanzi: "好喝", pinyin: "hǎohē", arti: "enak (minuman)" },
+        { hanzi: "好看", pinyin: "hǎokàn", arti: "bagus (pandangan)" },
+        { hanzi: "忙", pinyin: "máng", arti: "sibuk" },
+        { hanzi: "累", pinyin: "lèi", arti: "lelah" },
+
+        // ====== PARTIKEL & KATA KETERANGAN ======
+        { hanzi: "地", pinyin: "de", arti: "Partikel struktural (cara melakukan aksi)" },
+        { hanzi: "什么的", pinyin: "shénme de", arti: "dan sebagainya / dan lain-lain" },
+        { hanzi: "就", pinyin: "jiù", arti: "maka / segera" },
+        { hanzi: "还", pinyin: "hái", arti: "masih / bahkan / juga" },
+        { hanzi: "也", pinyin: "yě", arti: "juga" },
+        { hanzi: "都", pinyin: "dōu", arti: "semuanya" },
+        { hanzi: "很", pinyin: "hěn", arti: "sangat" },
+        { hanzi: "太", pinyin: "tài", arti: "terlalu" },
+        { hanzi: "真", pinyin: "zhēn", arti: "sungguh" },
         { hanzi: "已经", pinyin: "yǐjīng", arti: "sudah" },
-        { hanzi: "还没", pinyin: "hái méi", arti: "masih belum" },
-        { hanzi: "没事", pinyin: "méishì", arti: "tidak apa-apa" },
-        { hanzi: "客气", pinyin: "kèqi", arti: "sungkan / sopan" },
-        { hanzi: "跟", pinyin: "gēn", arti: "dengan / ikut" },
-        { hanzi: "都...了", pinyin: "dōu...le", arti: "sudah (penekanan)" }
+        { hanzi: "早早地", pinyin: "zǎozǎo de", arti: "lebih awal" },
+        { hanzi: "慢慢地", pinyin: "mànmàn de", arti: "perlahan-lahan" },
+        { hanzi: "好好地", pinyin: "hǎohǎo de", arti: "dengan baik" },
+
+        // ====== KATA TANYA ======
+        { hanzi: "什么", pinyin: "shénme", arti: "apa" },
+        { hanzi: "哪儿", pinyin: "nǎr", arti: "di mana" },
+        { hanzi: "哪里", pinyin: "nǎlǐ", arti: "di mana" },
+        { hanzi: "谁", pinyin: "shéi", arti: "siapa" },
+        { hanzi: "怎么", pinyin: "zěnme", arti: "bagaimana (cara)" },
+        { hanzi: "怎么样", pinyin: "zěnmeyàng", arti: "bagaimana (keadaan)" },
+        { hanzi: "多少", pinyin: "duōshao", arti: "berapa (jumlah)" },
+        { hanzi: "几", pinyin: "jǐ", arti: "berapa (angka kecil)" },
+        { hanzi: "哪个", pinyin: "nǎge", arti: "yang mana" },
+
+        // ====== FRASA / UNGKAPAN ======
+        { hanzi: "生日快乐", pinyin: "shēngrì kuàilè", arti: "Selamat ulang tahun!" },
+        { hanzi: "明天就是女儿的生日了", pinyin: "míngtiān jiù shì nǚ'ér de shēngrì le", arti: "Besok sudah ulang tahun anak perempuan." },
+        { hanzi: "你不说，我还真忘了", pinyin: "nǐ bù shuō, wǒ hái zhēn wàng le", arti: "Kalau kamu tidak bilang, saya benar-benar lupa." },
+        { hanzi: "她喜欢画画", pinyin: "tā xǐhuān huà huà", arti: "Dia suka menggambar." },
+        { hanzi: "就送画笔吧", pinyin: "jiù sòng huàbǐ ba", arti: "Ya sudah, beri dia kuas gambar saja." },
+        { hanzi: "我再给她买个大大的蛋糕", pinyin: "wǒ zài gěi tā mǎi ge dàdà de dàngāo", arti: "Saya akan belikan dia kue yang besar sekali." },
+        { hanzi: "画我们的家", pinyin: "huà wǒmen de jiā", arti: "Gambarlah rumah kita." },
+        { hanzi: "有爸爸、妈妈、弟弟，还有黑色的狗、白色的猫什么的", pinyin: "yǒu bàba, māma, dìdi, hái yǒu hēisè de gǒu, báisè de māo shénme de", arti: "Ada ayah, ibu, adik, juga anjing hitam, kucing putih, dan lain-lain." },
+        { hanzi: "长长的面条儿，大大的蛋糕", pinyin: "chángcháng de miàntiáor, dàdà de dàngāo", arti: "Mie yang panjang, kue yang besar." },
+        { hanzi: "鱼啊肉啊什么的", pinyin: "yú a ròu a shénme de", arti: "Ikan, daging, dan lain-lain." },
+        { hanzi: "都是你喜欢吃的", pinyin: "dōu shì nǐ xǐhuān chī de", arti: "Semuanya adalah makanan kesukaanmu." },
+        { hanzi: "吃完饭我们还要出去玩呢", pinyin: "chīwán fàn wǒmen hái yào chūqù wán ne", arti: "Setelah makan, kami masih mau pergi bermain." },
+        { hanzi: "过生日就要吃好吃的，还要高高兴兴地玩", pinyin: "guò shēngrì jiù yào chī hǎochī de, hái yào gāogāoxìngxìng de wán", arti: "Merayakan ulang tahun harus makan enak, dan juga harus bermain dengan gembira." },
+        { hanzi: "她早早就上床了", pinyin: "tā zǎozǎo jiù shàng chuáng le", arti: "Dia cepat-cepat pergi ke tempat tidur." },
+        { hanzi: "舒舒服服地睡一觉", pinyin: "shūshūfúfú de shuì yī jiào", arti: "Tidur dengan nyaman sekali." },
+        { hanzi: "这是一天很忙、很累，但很快乐的一天", pinyin: "zhè shì yī tiān hěn máng, hěn lèi, dàn hěn kuàilè de yī tiān", arti: "Ini adalah hari yang sibuk, melelahkan, tetapi sangat membahagiakan." }
     ];
     const TOTAL_VOCAB = vocabulary.length;
 
-    // ========== FLASHCARD DENGAN CHECKLIST ==========
+    // ========== FLASHCARD ==========
     let currentDisplayList = [...vocabulary];
     let currentFlashIndex = 0;
     let isFlipped = false;
@@ -408,7 +465,7 @@
     function showAllFlash() { currentDisplayList = [...vocabulary]; currentFlashIndex=0; isFlipped=false; renderFlashcard(); }
     function shuffleFlash() { currentDisplayList = shuffleArray([...currentDisplayList]); currentFlashIndex=0; isFlipped=false; renderFlashcard(); }
 
-    // ========== KUIS DENGAN TIMER, SUARA, ULANG SALAH ==========
+    // ========== KUIS ==========
     let audioCtx = null;
     function initAudio() { if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)(); return audioCtx; }
     function playTone(freq, dur, vol=0.2) { let ctx=initAudio(); if(ctx.state==='suspended') ctx.resume().then(()=>_play(ctx,freq,dur,vol)).catch(e=>{}); else _play(ctx,freq,dur,vol); }
